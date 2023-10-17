@@ -1,0 +1,28 @@
+def transpose(matriks):
+
+  #Inisialisasi matriks transpose
+  matriks_transpose = [[0 for i in range(len(matriks))] for j in range(len(matriks[0]))]
+
+  #Hitung transpose
+  for i in range(len(matriks)):
+    for j in range(len(matriks[0])):
+      matriks_transpose[j][i] = matriks[i][j]
+
+  return matriks_transpose
+
+def main():
+  #Minta input dari pengguna untuk matriks
+  matriks = []
+  for i in range(int(input("Masukkan jumlah baris matriks: "))):
+    matriks.append([int(j) for j in input("Masukkan elemen baris matriks ke-{}: ".format(i + 1)).split()])
+
+  #Hitung transpose
+  matriks_transpose = transpose(matriks)
+
+  #Tampilkan matriks transpose
+  print("Matriks transpose:")
+  for baris in matriks_transpose:
+    print(baris)
+
+if __name__ == "__main__":
+  main()

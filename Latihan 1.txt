@@ -1,0 +1,23 @@
+def generate_identity_matrix(n):
+
+  #Inisialisasi matriks
+  matrix = [[0 for i in range(n)] for j in range(n)]
+
+  #Isi matriks dengan nilai 1 di diagonal utama
+  for i in range(n):
+    matrix[i][i] = 1
+
+  return matrix
+
+def main():
+  #Minta input dari pengguna
+  n = int(input("Masukkan ukuran matriks: "))
+
+  #Generate matriks identitas
+  matrix = generate_identity_matrix(n)
+
+  #Tampilkan matriks
+  print(matrix)
+
+if __name__ == "__main__":
+  main()

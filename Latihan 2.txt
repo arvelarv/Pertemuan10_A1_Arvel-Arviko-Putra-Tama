@@ -1,0 +1,38 @@
+def tambah_matriks(matriks1, matriks2):
+
+  #Memeriksa apakah matriks memiliki ukuran yang sama.
+  if len(matriks1) != len(matriks2) or len(matriks1[0]) != len(matriks2[0]):
+    raise ValueError("Matriks harus memiliki ukuran yang sama.")
+
+  #Menjumlahkan setiap elemen matriks.
+  matriks_hasil = []
+  for i in range(len(matriks1)):
+    baris_hasil = []
+    for j in range(len(matriks1[0])):
+      baris_hasil.append(matriks1[i][j] + matriks2[i][j])
+    matriks_hasil.append(baris_hasil)
+
+  return matriks_hasil
+
+def main():
+  #Mengambil input dari pengguna.
+  baris, kolom = input("Masukkan ukuran matriks: ").split(" ")
+  matriks1 = []
+  for i in range(int(baris)):
+    baris1 = input("Masukkan baris matriks pertama: ").split(" ")
+    matriks1.append([int(j) for j in baris1])
+  matriks2 = []
+  for i in range(int(baris)):
+    baris2 = input("Masukkan baris matriks kedua: ").split(" ")
+    matriks2.append([int(j) for j in baris2])
+
+  #Menjumlahkan matriks.
+  matriks_hasil = tambah_matriks(matriks1, matriks2)
+
+  #Menampilkan hasil.
+  print("Matriks hasil:")
+  for baris in matriks_hasil:
+    print(baris)
+
+if __name__ == "__main__":
+  main()
